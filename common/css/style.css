@@ -29,6 +29,6 @@ body {
     box-shadow: inset 20px 20px 60px #0f0f0f96, inset -20px -20px 60px #00000057;
 }
 .molc img {
-    width: clamp(20px,20%,300px);
+    width: 60px;
     height: auto;
 }
