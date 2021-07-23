@@ -16,9 +16,12 @@
     <div class="btn-box">
         <button data-date="0721" type="submit" class="btn_PUI btn">7.21</button>
         <button data-date="0723" type="submit" class="btn_PUI btn">7.23</button>
+        <button data-date="more" type="submit" class="btn_PUI btn">PUI</button>
     </div>
     <div class="box">
-        <div class="inner">
+        <div id="mol-ground" class="inner">
+            <div class="molc"><img src="./img/p.u.i.png" alt=""></div>
+            <div class="molc"><img src="./img/p.u.i.png" alt=""></div>
             <div class="molc"><img src="./img/p.u.i.png" alt=""></div>
         </div>
     </div>
@@ -44,11 +47,21 @@
             case "0723":
                 $(".molc").children().attr("src", "./img/p.u.i.2.png");
                 break;
+
+            case "more":
+                $("#mol-ground").append("<div class=\"molc\"><img src=\"./img/p.u.i.png\" alt=\"\"></div>");
+                break;
+
             default:
                 alert("error : 1");
                 break;
         };
-        $(".molc").pep().data('plugin_pep').revert();
+
+        $(".molc")
+            .pep({
+                droppable: '.droppable',
+                constrainTo: 'parent'
+            })
     });
 </script>
 
