@@ -2,6 +2,36 @@ body {
     background-color: #e8e8e8;
     font-family: 'Noto Sans JP', sans-serif;
 }
+ button {
+display: block;
+border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+  text-align: center;
+  margin: 50px auto;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #f8f8f8, #d1d1d1);
+  box-shadow:  5px 5px 10px #c5c5c5,
+              -5px -5px 10px #ffffff;
+}
+ button:hover {
+    background:#e8e8e8;
+}
+
+ button:active {
+  border-radius: 8px;
+  background: linear-gradient(145deg, #d1d1d1, #f8f8f8);
+  box-shadow:  5px 5px 10px #c5c5c5,
+               -5px -5px 10px #ffffff;
+}
+
 .box {
     display: flex;
     flex-direction: column;
@@ -9,7 +39,7 @@ body {
     width: min(80vw,600px);
     justify-content: center;
     box-sizing: border-box;
-    margin: 200px auto 0;
+    margin: 0 auto;
     background-color: #e8e8e8;
     border-radius: 25px;
     box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff;
@@ -29,6 +59,6 @@ body {
     box-shadow: inset 20px 20px 60px #0f0f0f96, inset -20px -20px 60px #00000057;
 }
 .molc img {
-    width: 60px;
+    width: clamp(20px,50px,300px);
     height: auto;
 }

@@ -2,29 +2,54 @@
 <html lang="ja">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="stylesheet" href="./common/css/reset.css">
-  <link rel="stylesheet" href="./common/css/style.css">
-  <title>PUI</title>
-  <script>
-  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="./common/css/reset.css">
+    <link rel="stylesheet" href="./common/css/style.css">
+    <title>PUI</title>
+    <script>
+    </script>
 </head>
 
 <body>
+
+    <button data-date="0721" type="submit" class="btn_PUI btn">7.21</button>
+    <button data-date="0723" type="submit" class="btn_PUI btn">7.23</button>
+
     <div class="box">
         <div class="inner">
-        <div class="molc"><img src="./img/p.u.i.png" alt=""></div>
-    </div>
+            <div class="molc"><img src="./img/p.u.i.png" alt=""></div>
+        </div>
     </div>
 
 </body>
 <script src="./common/javascript/jquery-1.10.2.min.js" charset="utf-8"></script>
 <script src="./common/javascript/pep.js" charset="utf-8"></script>
 <script>
-$(document).ready(function(){
-    $('.molc').pep({droppable: '.droppable',constrainTo: 'parent'});
-});
+    $(document).ready(function () {
+        $('.molc').pep({
+            droppable: '.droppable',
+            constrainTo: 'parent'
+        });
+    });
+
+    $(".btn_PUI").click(function () {
+        var PUI_val = $(this).data("date");
+        switch (PUI_val) {
+            case "0721":
+                $(".molc").children().attr("src", "./img/p.u.i.png");
+                break;
+
+            case "0723":
+                $(".molc").children().attr("src", "./img/p.u.i.2.png");
+                break;
+            default:
+                alert("error : 1");
+                break;
+        };
+        $(".molc").pep().data('plugin_pep').revert();
+    });
 </script>
+
 </html>
